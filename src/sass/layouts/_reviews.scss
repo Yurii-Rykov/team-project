@@ -1,0 +1,202 @@
+.section-reviews{
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+.wrapper {
+    max-width: 1200px;
+}
+.reviews__wrapper {
+    padding-bottom: 120px; 
+}
+.reviews__box{
+    @include tablet {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            box-shadow: -5px 8px 26px rgba(0, 0, 0, 0.04);
+            padding-bottom: 40px;
+        }
+    @include desktop {
+        max-width: 1088px;
+        margin: 0 auto;
+    }
+}
+.reviews__title {
+    @include title;
+    margin-bottom: 24px;
+    text-align: center;
+}
+.reviews__img {
+    margin-left: auto;
+    margin-right: auto;
+
+    @include tablet{
+        width: 150px;
+        max-width: none;
+        top: 30px;
+        position: relative;
+    }
+}
+.reviews__name {
+    @include font(800, 14px, 18px, 0.08em);
+    color: $accent-color;
+    margin-bottom: 16px;
+    text-align: center;
+
+    @include tablet {
+        font-size: 20px;
+        line-height: 24px;
+        text-align: left;   
+    }
+    @include desktop {
+        font-size: 30px;
+        line-height: 36px;
+    }
+}
+.reviews__paragraph{
+    padding-right: 20px;
+    padding-left: 20px;
+    @include font(500, 12px, 20px, 0.08em);
+    text-align: center;
+
+    @include tablet {
+            text-align: left;
+            padding: 0;
+            height: 360px;
+        }
+    @include desktop {
+        font-size: 18px;
+        line-height: 28px;
+    }    
+}
+.reviews__span--color{
+    display: block;
+    margin-bottom: 16px;
+    color: $text-color;
+    @include font(500, 12px, 15px, 0.08em);
+
+    @include desktop {
+        max-width: 482px;
+    }
+}
+
+/* limiter-text ------------------------------------------*/
+
+.limiter {
+    max-height: 221px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 30px;
+
+    @include tablet {
+        max-width: 412px;
+        margin-left: 44px;
+    }
+    @include desktop{
+        max-width: 706px;
+        max-height: 230px;
+    }
+}
+.limiter .buttom {
+    position: absolute;
+    bottom: 0;
+    opacity: 1;
+    transition: 300ms;
+}
+.read-more-checker {
+    opacity: 0;
+    position: absolute;
+
+    &:checked~.limiter {
+            max-height: none;
+            overflow: visible;
+        }
+    &:checked~.limiter .buttom {
+        opacity: 0;
+        transition: 300ms;
+    }
+    &~.read-more-button::before {
+        content: "...Read more";
+        @include desktop{
+            content: none;
+        }
+    }
+    &:checked~.read-more-button::before {
+        content: "Close...";
+}
+}
+.read-more-button {
+    position: absolute;
+    display: inline-block;
+    right: 5%;
+    text-decoration: underline;
+    color: $accent-color;
+    @include font(500, 12px, 20px, 0.08em);
+    cursor: pointer;
+
+    @include tablet{
+        bottom: 33%;
+        right: 13%;
+    }
+}
+
+// ---end-limiter-text----------------------------------------------
+
+// ---slider->
+
+.swiper-pagination-bullet{
+    width: 54px;
+    height: 54px;
+   
+    &:first-child {
+        background-image: url(../images/slider-preview-1.jpg);
+    }
+    &:nth-child(2) {
+        background-image: url(../images/slider-preview-2.jpg);
+    }
+    &:nth-child(3) {
+        background-image: url(../images/slider-preview-3.jpg);
+    }
+    &:nth-child(4) {
+        background-image: url(../images/slider-preview-4.jpg);
+    }
+    &:nth-child(5) {
+        background-image: url(../images/slider-preview-5.jpg);
+    }
+    &:nth-child(6) {
+        background-image: url(../images/slider-preview-6.jpg);
+    }
+    &:last-child {
+        background-image: url(../images/slider-preview-7.jpg);
+    }
+}
+.swiper-pagination-bullet-active{
+    border: 1px solid $accent-color;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    top: 92%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include tablet {
+        top: 35%;
+    }
+     @media screen and (max-width:419px) {
+         display: none;
+    }
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none;
+}
+.swiper-button-next{
+    background-image: url(../images/arrow-2.svg);
+}
+.swiper-button-prev{
+    background-image: url(../images/arrow-1.svg);
+}    
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal{
+    bottom: 40px;
+}

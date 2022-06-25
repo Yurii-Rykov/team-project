@@ -1,0 +1,99 @@
+.section-hero {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    background-image: url(../images/wave-bgnd-tab.png);
+    background-repeat: no-repeat;
+    background-position: top -10px left -64px;
+
+    @include mobile {
+        background-position: top left;
+    }
+
+    @include tablet {
+        padding-top: 40px;
+        padding-bottom: 43px;
+        background-image: url(../images/wave-bgnd-det.png);
+        background-position: 50% 80%;
+        background-size: cover;
+    }
+
+    @include desktop {
+        padding-top: 0;
+        padding-bottom: 46px;
+        // background-position: 50;
+    }
+
+    &__container {
+        @include tablet {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+
+    &__title {
+        @include title;
+        width: 280px;
+        margin-bottom: 8px;
+        @include tablet {
+            width: 320px;
+        }
+        @include desktop {
+            width: 560px;
+            font-size: 58px;
+        }
+    }
+
+    &__text {
+        @include font(500, 14px, 1.57, 00.08em);
+        color: $text-color;
+        @include desktop {
+            font-size: 20px;
+            line-height: 1.649;
+        }
+    }
+
+    &__pre-title {
+        @include font(700, 14px, 1.57, 00.08em);
+        margin-bottom: 40px;
+        @include tablet {
+            margin-bottom: 48px;
+        }
+        @include desktop {
+            font-size: 20px;
+            line-height: 1.649;
+        }
+        &--accent {
+            @include mobile-upto-desktop {
+                display: block;
+                color: $accent-color;
+            }
+        }
+    }
+
+    &__img {
+        @include upto-tablet {
+            margin: 40px auto;
+        }
+    }
+
+    &__link {
+        @include link;
+        @include button;
+            width: 280px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            @include tablet {
+                width: 260px;
+                margin: 0;
+            }
+        
+            @include desktop {
+                width: 354px;
+            }
+    }
+}

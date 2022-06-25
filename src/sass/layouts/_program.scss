@@ -1,0 +1,615 @@
+.program {
+    position: relative;
+    
+    padding-top: 40px;
+    // padding-bottom: 604px; //! УБРАЛ
+
+    background-color: $title-color;
+
+    // background-image:
+    //     url("../images/program-bcg-480-1x-min.png");
+
+    // background-size: auto auto;
+    // background-repeat: no-repeat;
+    // background-position: right 0 bottom 505px; //! 499px
+    // // background-attachment: scroll;
+
+
+    // @media screen and (min-device-pixel-ratio: 2),
+    //         screen and (min-resolution: 192dpi),
+    //         screen and (min-resolution: 2dppx) {
+    //             background-image: 
+    //                 url("../images/program-bcg-480-2x-min.png");
+    //         background-size: 150px 137px; //! задать размер 1х
+    // }
+
+
+// !------------ Рабочий вариаант через ::after ---------------
+    // &::after {
+    //     content: "";
+    //     position: absolute;
+    //     background-image:
+    //             url("../images/program-bcg-480-2x-min.png");
+    //     background-repeat: no-repeat;
+    //     background-position: right;
+    //     background-size: contain;
+
+    //     width: 176px;
+    //     height: 137px;
+        
+    //     // width: auto;
+    //     // height: auto;
+
+    //     bottom: 499px;
+    //     right: 0;
+    // }
+// !____________________________________________________________
+    
+    
+    @include tablet {
+        padding-top: 60px;
+        // padding-bottom: 364px; //! УБРАЛ
+
+        // background-image:
+        //         url("../images/program-bcg-768-1x-min.png");
+        
+        //     background-size: 368px auto;
+        //     background-repeat: no-repeat;
+        //     background-position: right 0 bottom 261px; //! 264px
+        
+        //     @media screen and (min-device-pixel-ratio: 2),
+        //     screen and (min-resolution: 192dpi),
+        //     screen and (min-resolution: 2dppx) {
+        //         background-image:
+        //             url("../images/program-bcg-768-2x-min.png");
+        //     }
+    }
+
+    @include desktop {
+        padding-top: 80px;
+        // padding-bottom: 436px; //! УБРАЛ
+
+        // background-image:
+        //         url("../images/program-bcg-1680-1x-min.png");
+        
+        // background-size: 684px auto;
+        // background-repeat: no-repeat;
+        // background-position: left 0 bottom 70px;
+    
+        // @media screen and (min-device-pixel-ratio: 2),
+        // screen and (min-resolution: 192dpi),
+        // screen and (min-resolution: 2dppx) {
+        //     background-image:
+        //         url("../images/program-bcg-1680-2x-min.png");
+        // }
+    }
+
+    .container {
+        text-align: center;
+        padding-bottom: 604px; //! добавил
+
+        background-image:
+                url("../images/program-bcg-480-1x-min.png");
+        
+            background-size: auto auto;
+            background-repeat: no-repeat;
+            background-position: right 0 bottom 505px; //! 505-499px
+            // background-attachment: scroll;
+        
+        
+            @media screen and (min-device-pixel-ratio: 2),
+            screen and (min-resolution: 192dpi),
+            screen and (min-resolution: 2dppx) {
+                background-image:
+                    url("../images/program-bcg-480-2x-min.png");
+                background-size: 150px 137px; //! задать размер 1х
+            }
+
+        @include tablet {
+            text-align: left;
+
+            padding-bottom: 364px; //! добавил
+
+            background-image:
+                    url("../images/program-bcg-768-1x-min.png");
+            
+            background-size: 368px auto;
+            background-repeat: no-repeat;
+            background-position: right 0 bottom 261px; //! 264px
+        
+            @media screen and (min-device-pixel-ratio: 2),
+            screen and (min-resolution: 192dpi),
+            screen and (min-resolution: 2dppx) {
+                background-image:
+                    url("../images/program-bcg-768-2x-min.png");
+            }
+        }
+
+        @include desktop {
+        
+        padding-bottom: 436px; //! добавил
+
+        background-image:
+                url("../images/program-bcg-1680-1x-min.png");
+        
+            background-size: 684px auto;
+            background-repeat: no-repeat;
+            background-position: left 0 bottom 70px;
+        
+            @media screen and (min-device-pixel-ratio: 2),
+            screen and (min-resolution: 192dpi),
+            screen and (min-resolution: 2dppx) {
+                background-image:
+                    url("../images/program-bcg-1680-2x-min.png");
+            }
+        }
+    }
+
+
+    // !++++++++++++ Стилизация текста ++++++++++++++++++
+    &__title {
+        @include title;
+        margin-bottom: 40px;
+        color: $white-color;
+
+        @include tablet {
+            // width: 334px;
+            text-align: left;
+            // margin-left: 55px; // !УБРАЛ
+        }
+
+        @include desktop {
+            font-size: 58px;
+            margin-bottom: 136px;
+            margin-left: 16px;
+        }
+    }
+
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++
+    &__first-title {
+        // text-align: left;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        @include font(700, 14px, 2, 0.08em);
+        color: $white-color;
+
+        // !++++++++++ кружочки mobile ++++++++++++
+        &.one::before {
+            content: "";
+            position: absolute;
+            display: block;
+    
+            width: 12px;
+            height: 12px;
+    
+            top: 9px;
+            left: 3px;
+    
+            background-color: $accent-color;
+            border-radius: 50%;
+
+            z-index: 1;
+        }
+
+        &.two::before {
+            content: "";
+            position: absolute;
+            display: block;
+    
+            width: 12px;
+            height: 12px;
+    
+            top: 213px;
+            left: 3px;
+    
+            background-color: $accent-color;
+            border-radius: 50%;
+
+            z-index: 1;
+        }
+        
+        &.three::before {
+            content: "";
+            position: absolute;
+            display: block;
+    
+            width: 12px;
+            height: 12px;
+    
+            top: 456px;
+            left: 3px;
+    
+            background-color: $accent-color;
+            border-radius: 50%;
+
+            z-index: 1;
+        }
+
+        &.four::before {
+            content: "";
+            position: absolute;
+            display: block;
+    
+            width: 12px;
+            height: 12px;
+    
+            top: 767px;
+            left: 3px;
+    
+            background-color: $accent-color;
+            border-radius: 50%;
+
+            z-index: 1;
+        }
+
+        &.five::before {
+            content: "";
+            position: absolute;
+            display: block;
+    
+            width: 12px;
+            height: 12px;
+    
+            top: 1117px;
+            left: 3px;
+    
+            background-color: $accent-color;
+            border-radius: 50%;
+
+            z-index: 1;
+        }
+        // !++++++++++ К О Н Е Ц кружочки mobile ++++++++++++
+
+        @include tablet {
+            display: inline-block;
+            // margin-bottom: 6px;
+
+        // !++++++++++ кружочки tablet ++++++++++++
+        &.one::before {
+            content: "";
+            position: absolute;
+            display: block;
+    
+            width: 12px;
+            height: 12px;
+    
+            top: 9px;
+            left: -93px;
+    
+            background-color: $accent-color;
+            border-radius: 50%;
+
+            z-index: 1;
+        }
+
+        &.two::before {
+            content: "";
+            position: absolute;
+            display: block;
+    
+            width: 12px;
+            height: 12px;
+    
+            top: 183px;
+            left: -93px;
+    
+            background-color: $accent-color;
+            border-radius: 50%;
+
+            z-index: 1;
+        }
+        
+        &.three::before {
+            content: "";
+            position: absolute;
+            display: block;
+    
+            width: 12px;
+            height: 12px;
+    
+            top: 342px;
+            left: -93px;
+    
+            background-color: $accent-color;
+            border-radius: 50%;
+
+            z-index: 1;
+        }
+
+        &.four::before {
+            content: "";
+            position: absolute;
+            display: block;
+    
+            width: 12px;
+            height: 12px;
+    
+            top: 515px;
+            left: -93px;
+    
+            background-color: $accent-color;
+            border-radius: 50%;
+
+            z-index: 1;
+        }
+
+        &.five::before {
+            content: "";
+            position: absolute;
+            display: block;
+    
+            width: 12px;
+            height: 12px;
+    
+            top: 770px;
+            left: -93px;
+    
+            background-color: $accent-color;
+            border-radius: 50%;
+
+            z-index: 1;
+        }
+        // !++++++++++ К О Н Е Ц кружочки tablet ++++++++++++
+        }
+
+        @include desktop {
+            margin-bottom: 24px;
+            font-size:  20px;
+            line-height: 1.4;
+            &--size {
+                font-size: 30px;
+                line-height: 0.93;
+            }
+
+            // !++++++++++ кружочки desktop ++++++++++++
+        &.one::before {
+            content: "";
+            position: absolute;
+            display: block;
+    
+            width: 16px;
+            height: 16px;
+    
+            top: -55px;
+            left: 28px;
+    
+            background-color: $accent-color;
+            border-radius: 50%;
+
+            z-index: 1;
+        }
+
+        &.two::before {
+            content: "";
+            position: absolute;
+            display: block;
+    
+            width: 16px;
+            height: 16px;
+    
+            top: -55px;
+            left: 309px;
+    
+            background-color: $accent-color;
+            border-radius: 50%;
+
+            z-index: 1;
+        }
+        
+        &.three::before {
+            content: "";
+            position: absolute;
+            display: block;
+    
+            width: 16px;
+            height: 16px;
+    
+            top: -55px;
+            left: 588px;
+    
+            background-color: $accent-color;
+            border-radius: 50%;
+
+            z-index: 1;
+        }
+
+        &.four::before {
+            content: "";
+            position: absolute;
+            display: block;
+    
+            width: 16px;
+            height: 16px;
+    
+            top: -55px;
+            left: 871px;
+    
+            background-color: $accent-color;
+            border-radius: 50%;
+
+            z-index: 1;
+        }
+
+        &.five::before {
+            content: "";
+            position: absolute;
+            display: block;
+    
+            width: 16px;
+            height: 16px;
+    
+            top: -55px;
+            left: 1147px;
+    
+            background-color: $accent-color;
+            border-radius: 50%;
+
+            z-index: 1;
+        }
+        // !++++++++++ К О Н Е Ц кружочки desktop ++++++++++++
+        }
+    }
+
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++
+    &__second-title {
+        margin-bottom: 4px;
+        @include font(700, 12px, 1.67, 0.08em);
+        color: $accent-color;
+
+        &::before {
+            content: "\2014 \0020";
+        }
+
+        @include desktop {
+            margin-bottom: 8px;
+            font-size:  20px;
+            width: 240px;
+        }
+    }
+
+    // ++++++++++++++++++++++++++++++++++++++++++++++++
+    &__first-item {
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+    
+            width: 1px;
+            height: 1115px;
+    
+            top: 10px;
+            //right: 193px; // 280px
+            left: 8px;
+
+            background-color: $white-color;
+        }
+
+        @include tablet {
+            &::before {
+                content: "";
+                position: absolute;
+                display: block;
+        
+                width: 1px;
+                height: 770px;
+        
+                top: 10px;
+                left: -87px;
+            }
+        }
+
+        @include desktop {
+            &:not(:last-child) {
+                margin-bottom: 0px;
+            }
+
+            
+            &:not(:last-child) {
+                margin-right: 40px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                display: block;
+        
+                width: 1680px;
+                height: 1px;
+        
+                top: -48px;
+                left: -175px;
+            }
+        }
+    }
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++
+    &__second-item {
+        @include font(500, 12px, 1.67, 0.08em);
+        color: $text-color-opacity;
+
+        @include desktop {
+            font-size:  18px;
+            line-height: 1.56;
+        }
+    }
+
+    // ============================================
+    &__list {
+        position: relative;
+        @include list;
+        display: inline-block;
+        text-align: left;
+        padding-left: 30px; 
+        // background-color: tomato;
+
+        @include tablet {
+            margin-bottom: 17px; //! = crutch 
+            margin-left: 161px; // !УБРАЛ 216px
+        }
+
+        @include desktop {
+            display: flex;
+            margin-bottom: 0;
+            margin-left: 156px;
+        }
+    }
+
+    // ============================================
+    &__second-list {
+        @include list;
+        margin-bottom: 4px;
+        width: 176px;
+            
+        @include tablet {
+            margin-bottom: 0px;
+
+            width: 110px;
+
+            &:not(:last-child) {
+                width: 155px;
+            }
+
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+
+        @include desktop {
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
+
+            &:not(:last-child) {
+                width: 100%;
+            }
+
+            width: 100%;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+    }
+// !++++++++++++++++++++ Доп. контейнер-1 для tablet +++++++++++++++
+    &__first-cont {
+        // background-color: rgb(89, 143, 75);
+
+        @include tablet {
+            // margin-bottom: 8px;
+            display: flex;
+            
+        }
+
+        @include desktop {
+            display: block;
+            width: 240px;
+        }
+    }
+
+// ____________________________________________________
+}
+

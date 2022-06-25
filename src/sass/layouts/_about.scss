@@ -1,0 +1,228 @@
+.about {
+  padding-top: 309px; //! для секции _benefits
+  padding-bottom: 40px;
+  @include desktop {
+    padding-top: 263px; //! для секции _benefits
+    padding-bottom: 60px;
+  }
+}
+.about__title {
+  @include title;
+  text-align: left;
+  margin-bottom: 20px;
+
+  @include tablet {
+    margin-bottom: 40px;
+  }
+  @include desktop {
+    margin-bottom: 80px;
+  }
+}
+.about__photo {
+  padding-bottom: 20px;
+  @include tablet {
+    flex-shrink: 0;
+    margin-right: 60px;
+  }
+  @include desktop {
+    margin-right: 172px;
+  }
+}
+
+.about__name {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  color: $title-color;
+  padding-bottom: 8px;
+  border-bottom: 1px solid $text-color;
+  text-align: left;
+  margin-top: 20px;
+  @include tablet {
+    margin-top: 0px;
+  }
+  @include desktop {
+    margin-top: 0px;
+    font-size: 30px;
+    line-height: 1.23;
+    padding-bottom: 16px;
+  }
+}
+
+.about__list {
+  list-style: none;
+  padding: 20px 0px;
+  margin-bottom: 16px;
+  @include desktop {
+    padding: 32px 0px;
+  }
+}
+
+.about__item {
+  & + & {
+    margin-top: 20px;
+  }
+}
+
+.about__wrp {
+  @include tablet {
+    display: flex;
+  }
+}
+.about__column {
+  flex-shrink: 1;
+  max-width: 667px;
+}
+.about__text {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.06em;
+  padding-left: 26px;
+  color: $title-color;
+  position: relative;
+
+  @include tablet {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+  @include desktop {
+    font-size: 16px;
+    line-height: 1.22;
+    padding-left: 59px;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 17px;
+    height: 14px;
+    background-image: url(../images/icon-tick-mob.svg);
+    position: absolute;
+    left: 0px;
+    @include desktop {
+      width: 24px;
+      height: 20px;
+      background-image: url(../images/icon-tick-tab.svg);
+    }
+  }
+}
+
+.about__descr {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
+  color: $text-color;
+
+  @include desktop {
+    font-size: 18px;
+    line-height: 1.56;
+    margin-bottom: 25px;
+  }
+}
+
+.about__link {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
+  text-decoration-line: underline;
+  color: #ff6b09;
+  transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    color: rgb(199, 60, 5);
+  }
+
+  @include desktop {
+    font-size: 18px;
+    line-height: 1.56;
+  }
+}
+
+.about__text-list {
+  list-style: none;
+  margin-bottom: 8px;
+  @include tablet {
+    margin-bottom: 24px;
+  }
+  @include desktop {
+    margin-bottom: 50px;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: $accent-color;
+    margin-bottom: 24px;
+    @include desktop {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+/* ---------------------Оформление модального окна-------------------- */
+
+.about__backdrop {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+  z-index: 15;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: visible;
+  transform: scale(1);
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: scale(0);
+}
+
+.about__modal-wrp {
+  overflow-y: scroll;
+}
+
+.about__modal-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid $accent-color;
+
+  margin: 10px 5vw 10px auto;
+}
+.about__close-btn-icon {
+  width: 30px;
+  height: 30px;
+  fill: $white-color;
+  transition: fill 300 ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
+}
+
+.about__certificate {
+  display: block;
+  margin: 0 auto;
+  width: 90vw;
+  max-width: 63vh;
+  height: auto;
+  max-height: 95vh;
+  margin: 0 auto;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+}

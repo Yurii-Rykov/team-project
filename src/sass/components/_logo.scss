@@ -1,0 +1,47 @@
+.logo {
+
+    &__link {
+        @include link;
+        display: flex;
+        align-items: center;
+        margin-bottom: 3px;
+    }
+    
+    &__text {
+        @include font(800, 17px, 1.175, 0.04em);
+        @include tablet {
+            font-size: 26px;
+            line-height: 1.231;
+        }
+
+        &--icon {
+            position: relative;
+            margin-left: 16px;
+            @include tablet {
+                margin-left: 30px;
+            }
+
+            &::before {
+                content: url(../images/logo-icon-mob.svg);
+                position: absolute;
+                right: 27px;
+                @include tablet {
+                    content: url(../images/logo-icon-tab.svg);
+                    right: 45px;
+                }
+            }
+        }
+    }
+
+    &__title {
+        @include font(700, 5px, 1.2, 0.18em);
+        @include tablet {
+            font-size: 8px;
+            line-height: 1.25;
+        }
+
+         &--accent {
+             color: $accent-color;
+         }
+    }
+}

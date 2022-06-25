@@ -1,0 +1,47 @@
+<section class="section-hero">
+  <div class="container section-hero__container">
+    <div class="section-hero__thumb">
+      <h1 class="section-hero__title">Complex preparation for English UPE</h1>
+      <p class="section-hero__text">It won’t be easy.</p>
+      <p class="section-hero__pre-title">
+        But you’re guaranteed to get
+        <span class="section-hero__pre-title--accent">+25 points</span>
+      </p>
+      <a class="section-hero__link" href="#contacts"> I want a free lesson </a>
+    </div>
+    <picture>
+      <source
+        srcset="
+          ./images/hero-img-mob.png    208w,
+          ./images/hero-img-mob-2x.png 416w,
+          ./images/hero-img-mob-3x.png 624w
+        "
+        media="(max-width: 767px)"
+        sizes="(max-width: 480px) 65vw, (max-width: 767px) 312px"
+      />
+      <source
+        srcset="
+          ./images/hero-img-tab.png     376w,
+          ./images/hero-img-tab-2x.png  752w,
+          ./images/hero-img-tab-3x.png 1128w
+        "
+        media="(max-width: 1679px)"
+        sizes="(min-width: 768px) 376px, 100vw"
+      />
+      <source
+        srcset="
+          ./images/hero-img-det.png     842w,
+          ./images/hero-img-det-2x.png 1684w,
+          ./images/hero-img-det-3x.png 2526w
+        "
+        media="(min-width: 1680px)"
+        sizes="(min-width: 1680px) 842px, 100vw"
+      />
+      <img
+        class="section-hero__img"
+        src="./images/hero-img-det.png"
+        alt="Teacher conducts class for students"
+      />
+    </picture>
+  </div>
+</section>

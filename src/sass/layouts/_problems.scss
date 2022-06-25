@@ -1,0 +1,258 @@
+.problems {
+    position: relative;
+
+    padding-top: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    height: 742px;
+    
+    background-image:
+        linear-gradient($title-color 73%, $white-color 73%);
+        // linear-gradient(to bottom,
+        //         $title-color 73%,
+        //         $white-color 27%);
+                
+    background-repeat: no-repeat;
+
+
+    @include tablet {
+        padding-top: 40px;
+        padding-left: 32px;
+        
+        height: 509px;
+            
+        background-image:
+            linear-gradient($title-color 67%, $white-color 67%);
+            // linear-gradient(to bottom,
+            //     $title-color 67%,
+            //     $white-color 33%);
+        
+        background-repeat: no-repeat;
+    }
+    
+    
+    @include desktop {
+        padding-top: 80px; 
+        padding-left: 16px;
+    
+        height: 772px; // ! добавить в .container
+        
+        background-image:
+            linear-gradient($title-color 73%, $white-color 73%);
+            // linear-gradient(to bottom,
+            //         $title-color 73%,
+            //         $white-color 27%);
+    
+        // background-size: 425px 476px, cover;
+        background-repeat: no-repeat;
+        // background-position: top 88px right 0, center;
+    }
+
+     .container {
+
+        @include desktop {
+        height: 483px; // ! добавил
+
+        background-image:
+                url("../images/bck_problems-min.svg");
+        
+            background-size: 425px 476px;
+            background-repeat: no-repeat;
+            background-position: top 7px right 0;
+        }
+    }
+
+    // !++++++++++++ Стилизация заголовка ++++++++++++++++++
+    &__title {
+        margin-bottom: 24px;
+
+        min-width: 280px;
+
+        text-align: left;
+
+        &--accent {
+            color: $accent-color;
+        }
+
+        @include title;
+        font-size: 24px;
+        color: $white-color;
+
+        @include tablet {
+            margin-bottom: 25px;
+
+            min-width: 568px;
+        }
+
+        @include desktop {
+            margin-bottom: 80px;
+
+            min-width: 866px;
+
+            font-size: 46px;
+        }
+    }
+
+    // !============= DIV-контейнер-плашка (problems__cont) =============
+    & .problems__cont {
+
+        position: absolute;
+        z-index: 1;
+
+        padding-top: 20px;
+        // padding-bottom: 20px;
+        padding-left: 32px;
+        padding-right: 32px; //! добавил
+
+        min-width: 280px; //! респонсивный, тянется 
+        // width: 280px; //! жестко задан
+        height: 499px; 
+
+        left: 50%;
+        transform: translateX(-50%);
+        // top: 50%;
+        top: 203px; // 203px на столько вверх от
+
+
+        background: $white-color;
+
+        box-shadow: -5px 8px 26px rgba(0, 0, 0, 0.04);
+
+        @include tablet {
+
+            padding-top: 32px;
+            padding-left: 0;
+            padding-right: 0x;
+            // padding-bottom: 32px;
+
+            width: 704px; 
+            height: 300px; 
+
+            top: 169px; // 169px на столько вверх от
+
+        }
+
+        @include desktop {
+
+            padding-top: 60px;
+            padding-left: 70px;
+            // padding-right: 0x;
+            // padding-bottom: 40px;
+
+            min-width: 1648px;
+            height: 354px; 
+
+            top: 338px; // 338px на столько вверх от 
+
+        }
+    }
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++
+    &__list {
+        @include list;
+        counter-reset: number; //! Задает значение CSS-счётчика, равным 0 
+
+        @include tablet {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px; //! 30px;
+
+            justify-content: space-evenly;
+            // justify-content: space-around;
+            
+            margin-right: auto;
+            margin-left: auto;
+            // margin-left: 45px;
+        }
+
+        @include desktop {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 77px;
+            justify-content: space-between;
+            margin-right: 40px;
+            margin-left: 40px;
+        }
+    }
+
+
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++
+    &__item {
+
+        
+        min-width: 225px; //! респонсивный, тянется 
+        // width: 225px; //! жестко задан
+
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        @include tablet {
+            margin-left: 0;
+
+            &:not(:last-child) {
+                margin-bottom: 0;
+                // background-color: tomato;
+            }
+
+            width: 236px;
+        }
+
+        @include desktop {
+            width: 380px; //! по макету = 236px
+
+            &:nth-child(n + 4) {
+                // background-color: orange;
+                margin-top: -30px;
+            }
+        }
+    }
+
+
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++
+    &__counter {
+        margin-bottom: 5px;
+
+        @include font(700, 14px, 1.64, 0.08em);
+        color: $accent-color;
+
+        // &::before {
+        //     content: "\2014 \0020 0";
+        // }
+        // !++++++++++++++++++ CSS-счетчик ++++++++++++++
+        &::before {
+            counter-increment: number;
+            content: "\2014 \0020 0" counter(number) "";
+        }
+
+        // !_____________________________________________
+        @include desktop {
+            font-size: 20px;
+        }
+    }
+
+
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++
+    &__text {
+
+        @include font(700, 14px, 1.43, 0.08em);
+        color: $title-color;
+
+        @include tablet {
+
+            width: 208px; 
+        }
+
+        @include desktop {
+            font-size: 20px;
+            line-height: 1.4;
+            width: 352px; //! по макету = 236px
+        }
+    }
+}
+
+// ________________________________________________________
+
+
+
